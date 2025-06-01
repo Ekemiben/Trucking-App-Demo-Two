@@ -136,7 +136,7 @@ const Services = () => {
 							Why Choose Us?
 						</h2>
 						<p className="text-xl text-center mb-16 max-w-2xl mx-auto font-semibold">
-							At Sarna trucking INC, we go the extra mile to ensure your logistics needs
+							At IFBC Trucking Services, we go the extra mile to ensure your logistics needs
 							are met with precision, care, and efficiency. Here’s what sets us
 							apart:
 						</p>

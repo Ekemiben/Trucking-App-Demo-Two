@@ -1,131 +1,3 @@
-// import { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
-// import { Menu, Close, PersonOutline } from "@mui/icons-material";
-// import { useSelector, useDispatch } from 'react-redux';
-// import { logout } from "../redux/userSlice"
-// import Logo from '/images/Sarna-trucking-inc-logo.svg'
-
-// const Navar = () => {
-//   const [toggle, setToggle] = useState(false);
-//  const navigate = useNavigate()
-// const dispatch = useDispatch()
-//   const currentUser = useSelector(state => state.user?.currentUser)
-// const userName = currentUser?.user?.userName
-//   const login = currentUser;
-
-//   const admin = login?.user?.role === "admin" ;
-// const Logout = ()=>{
-//      dispatch(logout())
-//      navigate('/')
-// }
-
-  
-//   return (
-//     <div className="sticky top-0 z-50">
-//       <div className="bg-sky-950 border-b-1 text-white flex items-center justify-between py-4 px-8 text-sm">
-//         <div onClick={()=>{navigate('/')}} className=' w-20 h-14 p-2 mt-[-10px] mb-4  hover:cursor-pointer'>
-//           <img src={Logo} alt="" />
-       
-//         </div>
-//         {/* Desktop Menu */}
-//         <nav className="hidden md:flex">
-//           <ul className="flex space-x-6 items-center">
-//             <li>
-//               <Link to="/" className='font-semibold text-lg'>Home</Link>
-//             </li>
-           
-//             <li>
-//               <Link to="/services" className='font-semibold text-lg'>Services</Link>
-//             </li>
-//             <li>
-//               <Link to="/about" className='font-semibold text-lg'>About</Link>
-//             </li>
-//             <li>
-//               <Link to="/contact" className='font-semibold text-lg'>Contact Us</Link>
-//             </li>
-//             <li>
-//               <Link to="/message" className='font-semibold text-lg'>Message</Link>
-//             </li>
-//             <li>
-//               <Link to="/driver-form" className='font-semibold text-lg'>Apply</Link>
-//             </li>
-//             {admin &&
-//               <li>
-//               <Link to="https://trucking-app-admin.onrender.com" className='font-semibold text-lg'>Admin</Link>
-//             </li>
-//             }
-//           </ul>
-//         </nav>
-        
-//         <div className="flex items-center space-x-4">
-//           <div className='flex flex-col justify-center items-center'>
-//           <PersonOutline />
-//           <h3 className='text-xs'>welcome {userName}</h3>
-//           </div>
-          
-//           {login ? <span onClick={Logout} className='cursor-pointer'>Logout</span> : <Link to='/login' className='font-semibold text-lg'><span>Login</span></Link>}
-          
-//           <div className="md:hidden">
-//             {toggle ? (
-//               <Close onClick={() => setToggle(false)} className="cursor-pointer" />
-//             ) : (
-//               <Menu onClick={() => setToggle(true)} className="cursor-pointer" />
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//       {/* Mobile Menu */}
-//       {toggle && (
-//         <nav className="md:hidden bg-sky-950 text-white p-4">
-//           <ul className="space-y-4">
-//             <li>
-//               <Link to="/" onClick={() => setToggle(false)}>Home</Link>
-//             </li>
-           
-//             <li>
-//               <Link to="/services" onClick={() => setToggle(false)}>Services</Link>
-//             </li>
-//             <li>
-//               <Link to="/about" onClick={() => setToggle(false)}>About</Link>
-//             </li>
-//             <li>
-//               <Link to="/contact" onClick={() => setToggle(false)}>Contact Us</Link>
-//             </li>
-//             <li>
-//               <Link to="/message" onClick={() => setToggle(false)}>Message</Link>
-//             </li>
-//             <li>
-//               <Link to="/driver-form" onClick={() => setToggle(false)}>Apply</Link>
-//             </li>
-//             {admin &&
-//               <li>
-//               <Link to="https://trucking-app-admin.onrender.com" onClick={() => setToggle(false)}>Admin</Link>
-//             </li>
-//             }
-//           </ul>
-//         </nav>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default Navar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 import { useState } from 'react';
@@ -147,7 +19,7 @@ import {
 } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "../redux/userSlice";
-import Logo from '/images/Sarna-trucking-inc-logo.svg';
+import Logo from '/images/IFBC-Logo.png';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -190,9 +62,9 @@ const Navbar = () => {
       <div className="bg-sky-950 border-b-1 text-white flex items-center justify-between py-4 px-8 text-sm">
         <div 
           onClick={() => navigate('/')} 
-          className='w-20 h-14 p-2 mt-[-10px] mb-4 hover:cursor-pointer'
+          className='flex items-center  h-10  mb-2 hover:cursor-pointer'
         >
-          <img src={Logo} alt="Sarna Trucking Logo" />
+         <div className='flex flex-row items-center '><img src={Logo} alt="Sarna Trucking Logo" className='h-8'/> <span className='text-lg font-bold px-3 mt-2'>IFBC Trucking App Demo 2</span></div> 
         </div>
 
         {/* Desktop Menu */}

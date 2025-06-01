@@ -39,7 +39,7 @@ const About = () => {
 							Providing first class logistics services worldwide.
 						</p>
 						<p className="mt-4 text-center px-4 max-w-2xl text-xl font-semibold">
-							In Sarna trucking INC, we deliver excellent service to our
+							In IFBC Trucking Services, we deliver excellent service to our
 							clients in a timely manner and ensure that the product is in good
 							condition. We place our customers as the top priority in our daily
 							business schedule.

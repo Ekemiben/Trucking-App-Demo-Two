@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import BgOurTeam from "/images/ourTeam.png";
-import Team3 from "/images/Sarna_trans_ceo.PNG";
-import Team2 from "/images/Sarna_trans_cfo.jpg";
-import Team1 from "/images/Sarna_trans_owner.jpg";
+import Team3 from "/images/avata-2.jpg";
+import Team2 from "/images/avata-1.jpg";
+import Team1 from "/images/avata-1.jpg";
 
 import Facebook from "/images/facebook.png";
 import Instagram from "/images/instagram.png";
@@ -20,47 +20,47 @@ const OurTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Manmeet Singh Sarna",
-      position: "Owner/President, Sarna Trucking INC.",
-      icons: [{ facebook: Facebook, Link:"https://www.facebook.com/sarna.manmeet?mibextid=wwXIfr" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
+      name: "Esther John",
+      position: "Team Member IFBC.",
+      icons: [{ facebook: Facebook, Link:"" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
       img: Team1,
     },
    
     {
       id: 3,
-      name: "Sarabmeet Singh Sarna",
-      position: "CEO, Sarna Trucking INC",
-      icons: [{ facebook: Facebook, Link:"https://www.facebook.com/sarabmeet.singhsarna?mibextid=wwXIfr" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
+      name: "Thomas Austine",
+      position: "Team Member, IFBC",
+      icons: [{ facebook: Facebook, Link:"" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
       img: Team3,
     },
      {
       id: 2,
-      name: "Santpreet Singh Sarna",
-      position: "CFO, Sarna Trucking INC.",
-      icons: [{ facebook: Facebook, Link:" https://www.facebook.com/santpreetsingh.sarna?mibextid=wwXIfr" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
+      name: "Josephine M.",
+      position: "Team Member, IFBC.",
+      icons: [{ facebook: Facebook, Link:" " }, { instagram: Instagram }, { tiktalk: Tiktalk }],
       img: Team2,
     },
-    // {
-    //   id: 4,
-    //   name: "Manmeet Singh Sarna",
-    //   position: "Owner/President, Sarna Trucking INC.",
-    //   icons: [{ facebook: Facebook, Link:"https://www.facebook.com/sarna.manmeet?mibextid=wwXIfr" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
-    //   img: Team1,
-    // },
-    // {
-    //   id: 5,
-    //   name: "Santpreet Singh Sarna",
-    //   position: "CEO, Sarna Trucking INC.",
-    //   icons: [{ facebook: Facebook, Link:"https://www.facebook.com/sarabmeet.singhsarna?mibextid=wwXIfr" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
-    //   img: Team2,
-    // },
-    // {
-    //   id: 6,
-    //   name: "Sarabmeet Singh Sarna",
-    //   position: "CFO, Sarna Trucking INC",
-    //   icons: [{ facebook: Facebook, Link:"https://www.facebook.com/sarabmeet.singhsarna?mibextid=wwXIfr" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
-    //   img: Team3,
-    // },
+    {
+      id: 4,
+      name: "Mary Samuel ",
+      position: "Team Member, IFBC.",
+      icons: [{ facebook: Facebook, Link:"" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
+      img: Team1,
+    },
+    {
+      id: 5,
+      name: "Gloria Thomas",
+      position: "Team Member, IFBC.",
+      icons: [{ facebook: Facebook, Link:"" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
+      img: Team2,
+    },
+    {
+      id: 6,
+      name: "James Saviour",
+      position: "Team Member, IFBC",
+      icons: [{ facebook: Facebook, Link:"" }, { instagram: Instagram }, { tiktalk: Tiktalk }],
+      img: Team3,
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -131,7 +131,7 @@ const OurTeam = () => {
                       <div>
                         <ul className="flex flex-row gap-x-2">
                           {member.icons.map((icon, i) => (
-                            icon.facebook ? (
+                            icon.facebook || icon.instagram || icon.tiktalk? (
                               <li key={i} className="h-6 w-6 bg-red-600 rounded-full flex justify-center items-center hover:bg-red-700 cursor-pointer">
                                 <a target="_blank" href={icon.Link}>
                                 <img 
@@ -172,7 +172,7 @@ const OurTeam = () => {
           </div> :""
           }
 
-          {/* <div className="flex flex-row w-full h-16 sm:h-20 justify-center gap-x-4 sm:gap-x-6 items-center mt-8">
+          <div className="flex flex-row w-full h-16 sm:h-20 justify-center gap-x-4 sm:gap-x-6 items-center mt-8">
             <button 
               onClick={goToPrevious}
               className="bg-red-600 flex items-center p-3 sm:p-4 rounded-full text-white hover:cursor-pointer hover:bg-red-700"
@@ -186,7 +186,7 @@ const OurTeam = () => {
             >
               <EastOutlinedIcon fontSize={isMobile ? "small" : "medium"} />
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

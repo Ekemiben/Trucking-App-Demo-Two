@@ -142,23 +142,23 @@ const ContactUs = () => {
 								{
 									icon: <FacebookOutlinedIcon />,
 									title: "FaceBook",
-									detail: "SarnatruckingINCfacebook.com",
+									detail: "IFBCTruckingfacebook.com",
 								},
 								{
 									icon: <LinkedInIcon />,
 									title: "LinkedIn",
-									detail: "SarnatruckingINCLinkedIn.com",
+									detail: "IFBCtruckingLinkedIn.com",
 								},
 								
 								{
 									icon: <PhoneForwardedIcon />,
 									title: "Phone",
-									detail: "559-835-8006",
+									detail: "323-GET-WORK (323-438-9675)",
 								},
 								{
 									icon: <EmailOutlined />,
 									title: "Email address",
-									detail: "sarabmeet@sarnatrucking.com",
+									detail: "info@ifbc.co",
 								},
 								
 								{

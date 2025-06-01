@@ -14,9 +14,9 @@ const Landing = () => {
     <div className="flex lg:px-6   w-full flex-col-reverse  md:flex-row items-center justify-between gap-10 md:px-4    text-white h-[90vh] sm:w-[95%] relative">
        
       <div className="flex flex-col gap-4 flex-1 lg:ml-20 px-4">
-        <h3 className="text-xs font-light sm:lg">The future of smart dispatching</h3>
+        <h3 className="sm:lg text-lg font-semibold">The future of smart dispatching</h3>
         <h1 className="lg:text-4xl font-bold md:3xl sm:2xl">
-          Sarna trucking INC is your smart, convenient and sure way of delivering your loads.
+          IFBC Trucking App is your smart, convenient and sure way of delivering your loads.
         </h1>
         {/* <h2 className="text-xl font-light">
           Want to get your goods delivered in time and in good condition? Talk to us today.

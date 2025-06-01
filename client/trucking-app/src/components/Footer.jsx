@@ -150,13 +150,17 @@
 
 import React from "react";
 // import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
-import Logo from "/images/Sarna-trucking-inc-logo.svg";
+import Logo from "/images/IFBC-Logo.png";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
 import { Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 // import ArrowIcon from "/images/Icon.png"
 // import frame1 from "/images/Frame1.png"
 
@@ -168,17 +172,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
 
           <div className="text-white">
-            <div className="flex items-center mb-6">
-              <img src={Logo} alt="Logo" className="w-28" />
+            <div className="flex items-center mb-4">
+              {/* <img src={Logo} alt="Logo" className="w-10" /> */}
+               <div className='flex flex-row items-center '><img src={Logo} alt="Sarna Trucking Logo" className='h-8' /> <span className='text-sm font-bold px-3 mt-2'>IFBC Trucking App Demo 2</span></div> 
               
             </div>
             <p className="text-base lg:text-lg mb-6">
-              Join our growing community and stay updated with the latest in Sarna Trucking Services.
+              Join our growing community and stay updated with the latest in IFBC Trucking Services.
             </p>
             
             
          
-            {/* <div className="mt-8">
+            <div className="mt-8">
               <div className="flex space-x-3">
                 {[
                   { icon: <FaFacebook size={20} />, size: "md:w-12 md:h-12" },
@@ -194,7 +199,7 @@ const Footer = () => {
                   </button>
                 ))}
               </div>
-            </div> */}
+            </div>
           </div>
 
         
@@ -246,17 +251,17 @@ const Footer = () => {
                   18203 W DEVON SHIRE AVENUE GOODYEAR, AZ 85395
                 </p> */}
                 <p className="text-base lg:text-lg">
-                7361 E SIMPSON AVE FRESNO, CA   93737-0042  
+                9350 Wilshire Blvd, Suite 203, Beverly Hills, CA 90212
                 </p>
               </div>
               <div className="flex items-center">
                 <WifiCalling3Icon className="mr-2" />
                 {/* <p className="text-base lg:text-lg">(623) 703 1180</p> */}
-                <p className="text-base lg:text-lg">559-835-8006</p>
+                <p className="text-base lg:text-lg">323-GET-WORK (323-438-9675)</p>
               </div>
               <div className="flex  items-center">
               <MailOutlineIcon className="mr-2"/>
-                <p className="text-base lg:text-lg ">sarabmeet@sarnatrucking.com</p>
+                <p className="text-base lg:text-lg ">info@ifbc.co</p>
               </div>
             </div>
             {/* <div className="flex">

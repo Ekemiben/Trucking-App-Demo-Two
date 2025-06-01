@@ -23,7 +23,7 @@ import {
 } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "../redux/userSlice";
-import Logo from "../assets/Sarna-trucking-inc-logo.svg";
+import Logo from "../assets/IFBC-Logo.png";
 // Add this import at the top of your Navbar.jsx file
 import { selectCurrentUser, selectIsAuthenticated } from "../redux/userSlice";
 
@@ -76,14 +76,20 @@ const Navbar = () => {
           component={Link} 
           to="/" 
           sx={{ 
-            width: 80, 
+            width: 380, 
             height: 56, 
             display: 'flex', 
             alignItems: 'center',
             textDecoration: 'none'
           }}
         >
-          <img src={Logo} alt="Sarna Trucking Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+          {/* <img src={Logo} alt="Sarna Trucking Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} /> */}
+           {/* <div 
+                    onClick={() => navigate('/')} 
+                    className='flex items-center  h-10  mb-2 hover:cursor-pointer'
+                  > */}
+                   <div className='flex flex-row items-center'><img src={Logo} alt="Sarna Trucking Logo" className='h-8'/> <span className='text-lg font-bold px-3 mt-2'>IFBC Trucking App Demo 2</span></div> 
+                  {/* </div> */}
         </Box>
 
         {/* Desktop Navigation */}

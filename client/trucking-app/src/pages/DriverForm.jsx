@@ -1,669 +1,3 @@
-// import { useState } from "react";
-// import axios from "axios";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
-
-// export default function DriverForm() {
-// 	const [formData, setFormData] = useState({
-// 		fullName: "",
-// 		email: "",
-// 		phone: "",
-// 		licenseNumber: "",
-// 		experience: "",
-// 		truckType: "",
-// 		address: "",
-// 		city: "",
-// 		state: "",
-// 		zipCode: "",
-// 		resume: null,
-// 	});
-//     const api_url = import.meta.env.VITE_api_url;
-// 	const [errors, setErrors] = useState({});
-
-// 	const handleChange = (e) => {
-// 		setFormData({ ...formData, [e.target.name]: e.target.value });
-// 		setErrors({ ...errors, [e.target.name]: "" }); // Clear error when user starts typing
-// 	};
-
-// 	const validateForm = () => {
-// 		const newErrors = {};
-// 		for (let key in formData) {
-// 			if (key !== "specialInstructions" && !formData[key]) {
-// 				newErrors[key] = `Please fill in the ${key
-// 					.replace(/([A-Z])/g, " $1")
-// 					.toLowerCase()}`;
-// 			}
-// 		}
-// 		setErrors(newErrors);
-// 		return Object.keys(newErrors).length === 0;
-// 	};
-
-// 	const handleSubmit = async (e) => {
-// 		e.preventDefault();
-// 		if (!validateForm()) {
-// 			toast.error("Please fill in all required fields.");
-// 			return;
-// 		}
-
-// 		try {
-// 			const response = await axios.post(`${api_url}/api/application`, formData);
-// 			 console.log("Success:", response.data);
-// 			toast.success(
-// 				"Application Submitted Successfully!",
-// 				setTimeout((window.location = "/"), 6000)
-// 			);
-			
-			
-// 		} catch (error) {
-// 			toast.error("Error submitting application. Please try again.");
-// 			console.error("Error:", error);
-// 		}
-// 	};
-
-// 	return (
-// 		<div className="flex justify-center w-full">
-// 			<div className="lg:w-[71%] flex flex-col justify-center items-center lg:rounded-2xl lg:mt-20 mb-20 border-2 bg-gray-50 sm:w-full md:w-[90%]">
-// 				<h1 className="mt-10 px-10">
-// 					Please make sure you fill all your details correctly!
-// 				</h1>
-
-// 				<div className="w-[90%] flex justify-center items-center gap-x-10">
-// 					<form
-// 						onSubmit={handleSubmit}
-// 						className="flex flex-col bg-gray-50 shadow-xl mb-10 w-full">
-						
-// 						<div className="flex flex-col lg:flex-row gap-x-10 space-y-4 p-6 w-full sm:flex-col md:flex-col ">
-						
-// 							<div className="lg:w-[50%] mb-10 mt-4 sm:w-full md:w-full">
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Full Name <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="text"
-// 										name="fullName"
-// 										value={formData.fullName}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.fullName && (
-// 										<p className="text-red-500 text-sm">{errors.fullName}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Email <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="email"
-// 										name="email"
-// 										value={formData.email}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.email && (
-// 										<p className="text-red-500 text-sm">{errors.email}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Phone <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="tel"
-// 										name="phone"
-// 										value={formData.phone}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.phone && (
-// 										<p className="text-red-500 text-sm">{errors.phone}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Driver's License Number{" "}
-// 										<span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="text"
-// 										name="licenseNumber"
-// 										value={formData.licenseNumber}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.licenseNumber && (
-// 										<p className="text-red-500 text-sm">
-// 											{errors.licenseNumber}
-// 										</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Years of Experience <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="number"
-// 										name="experience"
-// 										value={formData.experience}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.experience && (
-// 										<p className="text-red-500 text-sm">{errors.experience}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Preferred Truck Type <span className="text-red-500">*</span>
-// 									</label>
-// 									<select
-// 										name="truckType"
-// 										value={formData.truckType}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500">
-// 										<option value="">Select Truck Type</option>
-// 										<option value="Flatbed">Flatbed</option>
-// 										<option value="Refrigerated">Refrigerated</option>
-// 										<option value="Container">Container</option>
-// 										<option value="Tanker">Tanker</option>
-// 									</select>
-// 									{errors.truckType && (
-// 										<p className="text-red-500 text-sm">{errors.truckType}</p>
-// 									)}
-// 								</div>
-// 							</div>
-
-// 							{/* Right Column */}
-// 							<div className="lg:w-[50%] mb-10 sm:w-full md:w-full">
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Address <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="text"
-// 										name="address"
-// 										value={formData.address}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.address && (
-// 										<p className="text-red-500 text-sm">{errors.address}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										City <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="text"
-// 										name="city"
-// 										value={formData.city}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.city && (
-// 										<p className="text-red-500 text-sm">{errors.city}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										State <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="text"
-// 										name="state"
-// 										value={formData.state}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.state && (
-// 										<p className="text-red-500 text-sm">{errors.state}</p>
-// 									)}
-// 								</div>
-
-							
-// 								<div className="mb-3">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Zip Code <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="text"
-// 										name="zipCode"
-// 										value={formData.zipCode}
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 									/>
-// 									{errors.zipCode && (
-// 										<p className="text-red-500 text-sm">{errors.zipCode}</p>
-// 									)}
-// 								</div>
-
-								
-// 								<div className="mb-8">
-// 									<label className="block text-sm font-medium text-gray-500">
-// 										Upload Resume <span className="text-red-500">*</span>
-// 									</label>
-// 									<input
-// 										type="file"
-// 										name="resume"
-// 										onChange={handleChange}
-// 										className="mt-1 p-2 w-full border rounded-md text-gray-500"
-// 										accept=".pdf,.doc,.docx"
-// 									/>
-// 									{errors.resume && (
-// 										<p className="text-red-500 text-sm">{errors.resume}</p>
-// 									)}
-// 								</div>
-// 							</div>
-// 						</div>
-
-						
-// 						<div className="w-full px-6 pb-6 flex flex-row justify-center items-center">
-// 							<button
-// 								type="submit"
-// 								className="w-[50%]  bg-red-600 text-white p-2 rounded-md hover:bg-red-700">
-// 								Submit
-// 							</button>
-// 						</div>
-// 					</form>
-// 				</div>
-// 			</div>
-// 			<ToastContainer />
-// 		</div>
-// 	);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState } from "react";
-// import { Button, CircularProgress, Typography } from '@mui/material';
-// import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-// import axios from "axios";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
-// export default function DriverForm() {
-//   const [formData, setFormData] = useState({
-//     fullName: "",
-//     email: "",
-//     phone: "",
-//     licenseNumber: "",
-//     experience: "",
-//     truckType: "",
-//     address: "",
-//     city: "",
-//     state: "",
-//     zipCode: "",
-//     resumeUrl: null,
-//     resumePublicId: null
-//   });
-
-//   const [isUploading, setIsUploading] = useState(false);
-//   const [errors, setErrors] = useState({});
-//   const api_url = import.meta.env.VITE_api_url;
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//     setErrors({ ...errors, [e.target.name]: "" });
-//   };
-
-//   const handleFileUpload = async (e) => {
-//     const file = e.target.files[0];
-//     if (!file) return;
-
-//     // Validate PDF file
-//     if (file.type !== 'application/pdf') {
-//       setErrors({...errors, resume: 'Please upload a PDF file'});
-//       return;
-//     }
-
-//     setIsUploading(true);
-//     setErrors({...errors, resume: ''});
-
-//     const formData = new FormData();
-//     formData.append('pdf', file);
-
-//     try {
-//       const response = await axios.post(`${api_url}/api/application`, formData, {
-//         headers: {
-//           'Content-Type': 'multipart/form-data'
-//         }
-//       });
-      
-//       setFormData(prev => ({
-//         ...prev,
-//         resumeUrl: response.data.resumeUrl,
-//         resumePublicId: response.data.resumePublicId
-//       }));
-      
-//     } catch (err) {
-//       console.error('Upload failed:', err);
-//       setErrors({...errors, resume: 'Upload failed. Please try again.'});
-//     } finally {
-//       setIsUploading(false);
-//     }
-//   };
-
-//   const validateForm = () => {
-//     const newErrors = {};
-//     for (let key in formData) {
-//       if (key !== "specialInstructions" && !formData[key]) {
-//         newErrors[key] = `Please fill in the ${key
-//           .replace(/([A-Z])/g, " $1")
-//           .toLowerCase()}`;
-//       }
-//     }
-//     setErrors(newErrors);
-//     return Object.keys(newErrors).length === 0;
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     if (!validateForm()) {
-//       toast.error("Please fill in all required fields.");
-//       return;
-//     }
-
-//     try {
-//       const response = await axios.post(`${api_url}/api/application`, formData);
-//       toast.success("Application Submitted Successfully!");
-//       setTimeout(() => window.location = "/", 3000);
-//     } catch (error) {
-//       toast.error("Error submitting application. Please try again.");
-//       console.error("Error:", error);
-//     }
-//   };
-
-//   return (
-//     <div className="flex justify-center w-full">
-//       <div className="lg:w-[71%] flex flex-col justify-center items-center lg:rounded-2xl lg:mt-20 mb-20 border-2 bg-gray-50 sm:w-full md:w-[90%]">
-//         <h1 className="mt-10 px-10">
-//           Please make sure you fill all your details correctly!
-//         </h1>
-
-//         <div className="w-[90%] flex justify-center items-center gap-x-10">
-//           <form
-//             onSubmit={handleSubmit}
-//             className="flex flex-col bg-gray-50 shadow-xl mb-10 w-full">
-            
-//             <div className="flex flex-col lg:flex-row gap-x-10 space-y-4 p-6 w-full sm:flex-col md:flex-col ">
-            
-//               <div className="lg:w-[50%] mb-10 mt-4 sm:w-full md:w-full">
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Full Name <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="text"
-//                     name="fullName"
-//                     value={formData.fullName}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.fullName && (
-//                     <p className="text-red-500 text-sm">{errors.fullName}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Email <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="email"
-//                     name="email"
-//                     value={formData.email}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.email && (
-//                     <p className="text-red-500 text-sm">{errors.email}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Phone <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="tel"
-//                     name="phone"
-//                     value={formData.phone}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.phone && (
-//                     <p className="text-red-500 text-sm">{errors.phone}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Driver's License Number{" "}
-//                     <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="text"
-//                     name="licenseNumber"
-//                     value={formData.licenseNumber}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.licenseNumber && (
-//                     <p className="text-red-500 text-sm">
-//                       {errors.licenseNumber}
-//                     </p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Years of Experience <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="number"
-//                     name="experience"
-//                     value={formData.experience}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.experience && (
-//                     <p className="text-red-500 text-sm">{errors.experience}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Preferred Truck Type <span className="text-red-500">*</span>
-//                   </label>
-//                   <select
-//                     name="truckType"
-//                     value={formData.truckType}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500">
-//                     <option value="">Select Truck Type</option>
-//                     <option value="Flatbed">Flatbed</option>
-//                     <option value="Refrigerated">Refrigerated</option>
-//                     <option value="Container">Container</option>
-//                     <option value="Tanker">Tanker</option>
-//                   </select>
-//                   {errors.truckType && (
-//                     <p className="text-red-500 text-sm">{errors.truckType}</p>
-//                   )}
-//                 </div>
-//               </div>
-
-//               {/* Right Column */}
-//               <div className="lg:w-[50%] mb-10 sm:w-full md:w-full">
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Address <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="text"
-//                     name="address"
-//                     value={formData.address}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.address && (
-//                     <p className="text-red-500 text-sm">{errors.address}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     City <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="text"
-//                     name="city"
-//                     value={formData.city}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.city && (
-//                     <p className="text-red-500 text-sm">{errors.city}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     State <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="text"
-//                     name="state"
-//                     value={formData.state}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.state && (
-//                     <p className="text-red-500 text-sm">{errors.state}</p>
-//                   )}
-//                 </div>
-
-              
-//                 <div className="mb-3">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Zip Code <span className="text-red-500">*</span>
-//                   </label>
-//                   <input
-//                     type="text"
-//                     name="zipCode"
-//                     value={formData.zipCode}
-//                     onChange={handleChange}
-//                     className="mt-1 p-2 w-full border rounded-md text-gray-500"
-//                   />
-//                   {errors.zipCode && (
-//                     <p className="text-red-500 text-sm">{errors.zipCode}</p>
-//                   )}
-//                 </div>
-
-                
-//                 <div className="mb-8">
-//                   <label className="block text-sm font-medium text-gray-500">
-//                     Upload Resume (PDF only) <span className="text-red-500">*</span>
-//                   </label>
-//                   <div className="mt-1">
-//                     <input
-//                       accept="application/pdf"
-//                       style={{ display: 'none' }}
-//                       id="resume-upload"
-//                       type="file"
-//                       onChange={handleFileUpload}
-//                     />
-//                     <label htmlFor="resume-upload">
-//                       <Button
-//                         variant="outlined"
-//                         component="span"
-//                         startIcon={isUploading ? <CircularProgress size={20} /> : <CloudUploadIcon />}
-//                         disabled={isUploading}
-//                         fullWidth
-//                       >
-//                         {formData.resumeUrl ? 'Resume Uploaded' : 'Upload Resume'}
-//                       </Button>
-//                     </label>
-//                     {errors.resume && (
-//                       <Typography color="error" variant="body2" sx={{ mt: 1 }}>
-//                         {errors.resume}
-//                       </Typography>
-//                     )}
-//                     {formData.resumeUrl && (
-//                       <Typography variant="body2" sx={{ mt: 1, color: 'green' }}>
-//                         Resume successfully uploaded
-//                       </Typography>
-//                     )}
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-            
-//             <div className="w-full px-6 pb-6 flex flex-row justify-center items-center">
-//               <button
-//                 type="submit"
-//                 className="w-[50%] bg-red-600 text-white p-2 rounded-md hover:bg-red-700"
-//                 disabled={isUploading}>
-//                 {isUploading ? 'Processing...' : 'Submit Application'}
-//               </button>
-//             </div>
-//           </form>
-//         </div>
-//       </div>
-//       <ToastContainer />
-//     </div>
-//   );
-// }
-
-
-
-
-
 
 
 
@@ -832,6 +166,7 @@ export default function DriverForm() {
                   <input
                     type="text"
                     name="fullName"
+                    maxLength={40}
                     value={formData.fullName}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -848,6 +183,7 @@ export default function DriverForm() {
                   <input
                     type="email"
                     name="email"
+                    maxLength={40}
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -864,6 +200,7 @@ export default function DriverForm() {
                   <input
                     type="tel"
                     name="phone"
+                    maxLength={14}
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -880,6 +217,7 @@ export default function DriverForm() {
                   <input
                     type="text"
                     name="licenseNumber"
+                    maxLength={20}
                     value={formData.licenseNumber}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -896,6 +234,7 @@ export default function DriverForm() {
                   <input
                     type="number"
                     name="experience"
+                    maxLength={2}
                     value={formData.experience}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -937,6 +276,7 @@ export default function DriverForm() {
                   <input
                     type="text"
                     name="address"
+                    maxLength={70}
                     value={formData.address}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -953,6 +293,7 @@ export default function DriverForm() {
                   <input
                     type="text"
                     name="city"
+                    maxLength={40}
                     value={formData.city}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -969,6 +310,7 @@ export default function DriverForm() {
                   <input
                     type="text"
                     name="state"
+                    maxLength={30}
                     value={formData.state}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -985,6 +327,7 @@ export default function DriverForm() {
                   <input
                     type="text"
                     name="zipCode"
+                    maxLength={20}
                     value={formData.zipCode}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
