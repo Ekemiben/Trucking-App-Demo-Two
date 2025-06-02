@@ -253,7 +253,7 @@ const Testimonial = () => {
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
 			}}>
-			{/* Dark overlay for better text readability */}
+		
 			<div className="absolute inset-0 bg-black bg-opacity-10"></div>
 
 			<div className="relative z-10 w-full">

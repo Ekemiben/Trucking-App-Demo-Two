@@ -1,14 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
 import ImgOne from "/images/indian-one.jpg";
 import ImgTwo from "/images/ImgWoman.jpeg";
 import ImgThree from "/images/ImgMan.jpeg";
