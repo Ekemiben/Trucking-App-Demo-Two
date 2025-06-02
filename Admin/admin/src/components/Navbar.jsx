@@ -27,6 +27,7 @@ import Logo from "../assets/IFBC-Logo.png";
 // Add this import at the top of your Navbar.jsx file
 import { selectCurrentUser, selectIsAuthenticated } from "../redux/userSlice";
 
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -40,6 +41,11 @@ const Navbar = () => {
   const userEmail = currentUser?.email || "";
   const profilePicture = currentUser?.profilePicture || "";
   const isAdmin = currentUser?.role === 'admin'; // Example admin check based on role
+
+
+  const navigateToClient = (path) => {
+    window.location.href = `https://trucking-app-demo-two-client.onrender.com${path}`;
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -124,13 +130,28 @@ const Navbar = () => {
           </Button>
           
           <Button 
-            component={Link} 
-            to="https://trucking-app-demo-two-client.onrender.com/about" 
+            component="a"
+            href="https://trucking-app-demo-two-client.onrender.com/about" 
             color="inherit"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
           >
             About Us
           </Button>
+
+
+
+          
+          {/* <Button 
+  component="a" 
+  href="https://trucking-app-demo-two-client.onrender.com/" 
+  color="inherit"
+  sx={{ textTransform: 'none', fontWeight: 'bold' }}
+  target="_self" // Ensures it opens in the same tab
+>
+  Services
+</Button> */}
+
+ 
           
           <Button 
             component={Link} 
@@ -143,7 +164,7 @@ const Navbar = () => {
         </Box>
 
         {/* User Section */}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Box sx={{ servicesdisplay: 'flex', alignItems: 'center', gap: 2 }}>
           {isAuthenticated ? (
             <>
               <IconButton

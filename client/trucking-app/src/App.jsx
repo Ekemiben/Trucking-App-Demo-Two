@@ -27,7 +27,8 @@ const isregisterPage = location.pathname === '/register';
     <>
       {/* show navbar for all pages except login and register */}
       <ScrollToTop/>
-    {!isLoginPage && !isregisterPage && <Navbar/>}
+      {!isLoginPage && !isregisterPage && <Navbar />}
+      
       <Routes>
        
         {/* <Route path='/login' element ={<Login/>}/> */}
