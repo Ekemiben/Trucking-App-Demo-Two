@@ -50,7 +50,8 @@ const isregisterPage = location.pathname === '/register';
         
         
 
-      </Routes>
+        </Routes>
+        
        {/* show footer for all pages except login and register */}
       {!isLoginPage && !isregisterPage && <Footer />}
     </>
