@@ -96,7 +96,7 @@ const Navbar = () => {
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/" 
+            to="https://trucking-app-demo-two-client.onrender.com/" 
             color="inherit"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
           >
@@ -116,7 +116,7 @@ const Navbar = () => {
           
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/services" 
+            to="https://trucking-app-demo-two-client.onrender.com/services" 
             color="inherit"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
           >
@@ -125,7 +125,7 @@ const Navbar = () => {
           
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/about" 
+            to="https://trucking-app-demo-two-client.onrender.com/about" 
             color="inherit"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
           >
@@ -134,7 +134,7 @@ const Navbar = () => {
           
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/contact" 
+            to="https://trucking-app-demo-two-client.onrender.com/contact" 
             color="inherit"
             sx={{ textTransform: 'none', fontWeight: 'bold' }}
           >
@@ -233,7 +233,7 @@ const Navbar = () => {
         }}>
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/" 
+            to="https://trucking-app-demo-two-client.onrender.com/" 
             color="inherit"
             fullWidth
             onClick={handleDrawerToggle}
@@ -257,7 +257,7 @@ const Navbar = () => {
           
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/services" 
+            to="https://trucking-app-demo-two-client.onrender.com/services" 
             color="inherit"
             fullWidth
             onClick={handleDrawerToggle}
@@ -268,7 +268,7 @@ const Navbar = () => {
           
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/about" 
+            to="https://trucking-app-demo-two-client.onrender.com/about" 
             color="inherit"
             fullWidth
             onClick={handleDrawerToggle}
@@ -279,7 +279,7 @@ const Navbar = () => {
           
           <Button 
             component={Link} 
-            to="https://trucking-app-1.onrender.com/contact" 
+            to="https://trucking-app-demo-two-client.onrender.com/contact" 
             color="inherit"
             fullWidth
             onClick={handleDrawerToggle}
