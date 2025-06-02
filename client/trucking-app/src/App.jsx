@@ -35,8 +35,8 @@ const isregisterPage = location.pathname === '/register';
         {/* <Route path='/register' element ={<Register/>}/> */}
         <Route path='/' element ={<Home/>}/>
 
-        <Route path='/about' element ={<About/>}/>
-        <Route path='/services' element ={<Services/>}/>
+        {/* <Route path='/about' element ={<About/>}/> */}
+        {/* <Route path='/services' element ={<Services/>}/> */}
 
         {/* <Route path='/' element={<ClientTestimony />} /> */}
         {/* <Route path='/booking' element={<BookingForm/>} /> */}
