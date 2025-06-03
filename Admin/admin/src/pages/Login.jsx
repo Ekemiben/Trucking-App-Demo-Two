@@ -12,7 +12,7 @@ import { IconButton, InputAdornment } from "@mui/material";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({ email: "", password: "", login: "" });
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -33,7 +33,7 @@ const Login = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-    let errors = { email: "", password: "" };
+    let errors = { email: "", password: "", login: "" };
 
     if (!email.trim()) {
       errors.email = "Email is required!";
@@ -54,7 +54,20 @@ const Login = () => {
         dispatch(loginSuccess(res.data))
         navigate('/')
       } catch (error) {
-        dispatch(loginFailure(error.response?.data?.message || "Registration failed"));
+        dispatch(loginFailure(error.response?.data?.message || "Login failed"));
+        
+        // Set specific error message based on server response
+        if (error.response?.data?.message) {
+          setErrors(prev => ({
+            ...prev,
+            login: error.response.data.message
+          }));
+        } else {
+          setErrors(prev => ({
+            ...prev,
+            login: "Login failed. Please try again."
+          }));
+        }
       }
     }
   };
@@ -71,7 +84,10 @@ const Login = () => {
             className="w-full p-3 mb-2 border rounded-md"
             placeholder="Enter your email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setErrors(prev => ({...prev, email: "", login: ""}));
+            }}
           />
           {errors.email && (
             <motion.p
@@ -91,7 +107,10 @@ const Login = () => {
               className="w-full p-3 mb-2 border rounded-md pr-10"
               placeholder="Enter your password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setErrors(prev => ({...prev, password: "", login: ""}));
+              }}
             />
             <InputAdornment position="end" className="absolute right-3 top-3">
               <IconButton
@@ -112,6 +131,18 @@ const Login = () => {
               transition={{ duration: 0.3 }}
             >
               {errors.password}
+            </motion.p>
+          )}
+
+          {/* Login error message */}
+          {errors.login && (
+            <motion.p
+              className="text-red-500 text-sm mb-3"
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {errors.login}
             </motion.p>
           )}
 
@@ -137,3 +168,16 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+
+
+

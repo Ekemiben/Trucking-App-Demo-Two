@@ -60,75 +60,80 @@ const DetailsPage = () => {
 				</div>
 
 				<div className="flex flex-col lg:flex-row w-full justify-around">
-          <div className="flex flex-col border-2 rounded-3xl shadow-md w-auto">
-            <p className="p-7 font-bold text-lg text-gray-700">
-              Personal Information
-            </p>
-            <div className="  lg:w-[450px]">
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">Full Name:</p>
-                <p className="text-gray-500 text-wrap">{application.fullName}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">Phone:</p>
-                <p className="text-gray-500">{application.phone}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">Address:</p>
-                <p className="text-gray-500">{application.address}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">City:</p>
-                <p className="text-gray-500">{application.city}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">State:</p>
-                <p className="text-gray-500">{application.state}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%] pb-7">
-                <p className="text-gray-700 font-semibold">Zip Code:</p>
-                <p className="text-gray-500">{application.zipCode}</p>
-              </div>
-            </div>
-          </div>
+					<div className="flex flex-col border-2 rounded-3xl shadow-md w-auto">
+						<p className="p-7 font-bold text-lg text-gray-700">
+							Personal Information
+						</p>
+						<div className="  lg:w-[450px]">
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">Full Name:</p>
+								<p className="text-gray-500 text-wrap ml-4">
+									{application.fullName}
+								</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">Phone:</p>
+								<p className="text-gray-500 text-wrap ml-11">
+									{application.phone}
+								</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[80%]">
+								<p className="text-gray-700 font-semibold">Address:</p>
+								<p className="text-gray-500 ml-8">{application.address}</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">City:</p>
+								<p className="text-gray-500 ml-16">{application.city}</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">State:</p>
+								<p className="text-gray-500 ml-14">{application.state}</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[70%] pb-7">
+								<p className="text-gray-700 font-semibold">Zip Code:</p>
+								<p className="text-gray-500 ml-6">{application.zipCode}</p>
+							</div>
+						</div>
+					</div>
 
-          <div className="flex flex-col border-2 rounded-3xl shadow-md h-full">
-            <p className="p-7 font-bold text-lg text-gray-700">
-              Other Details
-            </p>
-            <div className="w-[450px]">
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">License Number:</p>
-                <p className="text-gray-500">{application.licenseNumber}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">Truck Type:</p>
-                <p className="text-gray-500">{application.truckType}</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%]">
-                <p className="text-gray-700 font-semibold">Years of Experience:</p>
-                <p className="text-gray-500">{application.experience} years</p>
-              </div>
-              <div className="flex ml-7 justify-between w-[70%] mb-8">
-                <p className="text-gray-700 font-semibold">Resume:</p>
-                {application.resume ? (
-                  <p 
-                    className="text-red-500 hover:cursor-pointer"
-                    onClick={handleViewPdf}
-                  >
-                    View/Download
-                  </p>
-                ) : (
-                  <p className="text-gray-500">Not available</p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-
-
+					<div className="flex flex-col border-2 rounded-3xl shadow-md h-full">
+						<p className="p-7 font-bold text-lg text-gray-700">Other Details</p>
+						<div className="w-[450px]">
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">License Number:</p>
+								<p className="text-gray-500 ml-16">
+									{application.licenseNumber}
+								</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">Truck Type:</p>
+								<p className="text-gray-500 ml-[105px]">
+									{application.truckType}
+								</p>
+							</div>
+							<div className="flex ml-7 justify-start w-[70%]">
+								<p className="text-gray-700 font-semibold">
+									Years of Experience:
+								</p>
+								<p className="text-gray-500 ml-11">
+									{application.experience} years
+								</p>
+							</div>
+							<div className="flex ml-7 justifystart w-[70%] mb-8">
+								<p className="text-gray-700 font-semibold">Resume:</p>
+								{application.resume ? (
+									<p
+										className="text-red-500 ml-32 hover:cursor-pointer"
+										onClick={handleViewPdf}>
+										View/Download
+									</p>
+								) : (
+									<p className="text-gray-500">Not available</p>
+								)}
+							</div>
+						</div>
+					</div>
+				</div>
 
 				{/* <div className="flex flex-col lg:flex-row w-full justify-around gap-4">
 					<div className="flex flex-col border-2 rounded-3xl shadow-md w-full lg:w-auto">
@@ -233,11 +238,6 @@ const DetailsPage = () => {
 						</div>
 					</div>
         </div> */}
-        
-
-
-
-
 			</div>
 
 			{error && (
